@@ -6,6 +6,7 @@ LABEL maintainer="Nahuel"
 
 # Julius_Setup
 RUN apt-get update && apt-get install -y curl build-essential && apt-get clean
+RUN apt-get install -y wget
 RUN wget https://zenodo.org/record/2530396/files/julius-speech/julius-v4.5.zip
 RUN unzip julius-v4.5.zip
 RUN cd julius-speech-julius-36de469/
