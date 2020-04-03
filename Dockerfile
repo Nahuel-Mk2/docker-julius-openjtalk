@@ -8,7 +8,7 @@ ENV JULIUS_VERSION 4.5
 
 # Julius_Setup
 RUN apt-get update && apt-get install -y curl build-essential && apt-get clean
-RUN wget https://zenodo.org/record/2530396/files/julius-speech/julius-v$JULIUS_VERSION.zip ./configure && make && make install
+RUN wget https://zenodo.org/record/2530396/files/julius-speech/julius-v$JULIUS_VERSION.zip
 RUN unzip julius-v$JULIUS_VERSION.zip
 RUN cd julius-speech-julius-36de469/
 RUN ./configure && make && make install
