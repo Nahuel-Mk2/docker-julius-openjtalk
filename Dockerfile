@@ -8,7 +8,10 @@ ENV JULIUS_VERSION 4.5
 
 # Julius_Setup
 RUN apt-get update && apt-get install -y curl build-essential && apt-get clean
-RUN curl -s http://jaist.dl.sourceforge.jp/julius/60273/julius-$JULIUS_VERSION.tar.gz | tar -xvzf - && cd julius-$JULIUS_VERSION && ./configure && make && make install
+RUN wget https://zenodo.org/record/2530396/files/julius-speech/julius-v$JULIUS_VERSION.zip ./configure && make && make install
+RUN unzip julius-v$JULIUS_VERSION.zip
+RUN cd julius-speech-julius-36de469/
+RUN ./configure && make && make install
 
 #OpenJTalk_Setup
 RUN apt-get install -y open-jtalk
